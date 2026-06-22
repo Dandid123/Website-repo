@@ -1,0 +1,73 @@
+/* Dark, professional, responsive portfolio styles */
+:root{
+  --bg:#0b0f14; /* very dark */
+  --card:#1b1f25; /* card grey */
+  --muted:#9aa3b2;
+  --white:#ffffff;
+  --accent:#ffffff; /* bright white highlights */
+}
+html,body{height:100%;}
+body{
+  margin:0;
+  font-family:Segoe UI, Roboto, -apple-system, Helvetica, Arial, sans-serif;
+  background:linear-gradient(180deg,var(--bg),#061018);
+  color:var(--white);
+  -webkit-font-smoothing:antialiased;
+}
+.site-header{
+  text-align:center;
+  padding:48px 16px 24px;
+}
+.title{
+  margin:0;
+  font-size:48px;
+  font-weight:700;
+  color:var(--accent);
+  letter-spacing:1px;
+}
+.subtitle{
+  margin:6px 0 12px;
+  color:var(--muted);
+}
+.nav a{
+  color:var(--white);
+  text-decoration:none;
+  margin:0 10px;
+  padding:6px 10px;
+  border-radius:6px;
+}
+.nav a:hover{background:rgba(255,255,255,0.06)}
+main{max-width:1000px;margin:0 auto;padding:20px}
+section{margin:28px 0;padding:18px}
+.intro h2,.about h2,.showcase h2,.contact h2{color:var(--accent);margin-bottom:12px}
+.intro p{color:var(--muted);font-size:16px}
+.hobbies ul{margin:8px 0 0;padding-left:20px;color:var(--white)}
+/* About layout */
+.about-content{display:flex;gap:18px;align-items:flex-end;position:relative}
+.about-text{flex:1}
+.about-text .lead{margin:0;color:var(--muted);line-height:1.6}
+.about-img{width:40%;display:flex;justify-content:flex-end;align-items:flex-end}
+.about-img .basketball{width:100%;height:auto;max-width:220px}
+.details p{margin:6px 0;color:var(--muted)}
+/* Showcase cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:#2a2f36;color:var(--white);padding:18px;border-radius:8px;min-height:160px}
+.card h3{margin-top:0}
+.card ul{margin:8px 0 0;padding-left:18px}
+/* Contact */
+.contact-links a{display:inline-block;margin-right:12px;color:var(--white);text-decoration:underline}
+.site-footer{border-top:1px solid rgba(255,255,255,0.04);text-align:center;padding:18px;color:var(--muted);font-size:14px}
+/* Responsive */
+@media (max-width:900px){
+  .title{font-size:36px}
+  .cards{grid-template-columns:1fr;}
+  .about-content{flex-direction:column}
+  .about-img{width:100%;justify-content:flex-end}
+  .about-img .basketball{max-width:160px;opacity:0.95}
+}
+@media (max-width:480px){
+  .title{font-size:28px}
+  main{padding:12px}
+  .subtitle{font-size:14px}
+  .about-img .basketball{max-width:120px}
+}
