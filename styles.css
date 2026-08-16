@@ -185,6 +185,16 @@ section:hover{
   max-width:220px;
   filter:drop-shadow(0 0 20px rgba(255,0,110,0.5)) drop-shadow(0 0 10px rgba(0,255,255,0.3));
   animation:cyber-float 3s ease-in-out infinite;
+  transform-origin:50% 50%;
+  pointer-events:none;
+}
+
+/* Wrapper used for JS-driven translate/rotate so the SVG can still keep its float animation */
+.basketball-wrapper{
+  display:inline-block;
+  transition:transform 0.12s cubic-bezier(.2,.9,.2,1);
+  will-change:transform;
+  pointer-events:none;
 }
 .details{
   margin-top:20px;

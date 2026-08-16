@@ -97,3 +97,37 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+// Basketball follows mouse: rotates to face cursor and slightly nudges toward it
+(function(){
+  const wrapper = document.querySelector('.basketball-wrapper');
+  const ball = document.querySelector('.basketball');
+  if (!wrapper || !ball) return;
+  // smooth transform on wrapper (defined in CSS too)
+  wrapper.style.willChange = 'transform';
+
+  document.addEventListener('mousemove', (e) => {
+    const rect = ball.getBoundingClientRect();
+    const ballX = rect.left + rect.width / 2;
+    const ballY = rect.top + rect.height / 2;
+    const dx = e.clientX - ballX;
+    const dy = e.clientY - ballY;
+
+    const angle = Math.atan2(dy, dx) * 180 / Math.PI + 90; // rotate so 'top' points toward cursor
+
+    // small translation toward cursor, scaled and clamped
+    const distance = Math.hypot(dx, dy);
+    const maxOffset = 30; // pixels
+    // scale offset so it moves more when cursor is closer, less when far
+    const scale = Math.max(0, Math.min(1, (180 - Math.min(distance,180)) / 180));
+    const moveX = (dx / (distance || 1)) * maxOffset * scale;
+    const moveY = (dy / (distance || 1)) * maxOffset * scale;
+
+    wrapper.style.transform = `translate(${moveX.toFixed(2)}px, ${moveY.toFixed(2)}px) rotate(${angle.toFixed(2)}deg)`;
+  });
+
+  // Reset transform when pointer leaves window
+  document.addEventListener('mouseleave', () => {
+    wrapper.style.transform = '';
+  });
+})();
+
