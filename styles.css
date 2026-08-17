@@ -179,23 +179,58 @@ section:hover{
   justify-content:flex-end;
   align-items:flex-end;
 }
+.about-img{
+  position:relative;
+}
+
 .about-img .basketball{
   width:100%;
   height:auto;
-  max-width:220px;
-  filter:drop-shadow(0 0 20px rgba(255,0,110,0.5)) drop-shadow(0 0 10px rgba(0,255,255,0.3));
+  max-width:260px;
+  filter:drop-shadow(0 6px 18px rgba(0,0,0,0.45));
   animation:cyber-float 3s ease-in-out infinite;
   transform-origin:50% 50%;
   pointer-events:none;
+  shape-rendering:geometricPrecision;
+  image-rendering:optimizeQuality;
 }
 
 /* Wrapper used for JS-driven translate/rotate so the SVG can still keep its float animation */
 .basketball-wrapper{
   display:inline-block;
-  transition:transform 0.12s cubic-bezier(.2,.9,.2,1);
+  position:relative;
+  width:100%;
+  max-width:260px;
+  transform-style:preserve-3d;
   will-change:transform;
   pointer-events:none;
 }
+
+/* soft ground shadow under the ball */
+.basketball-shadow{
+  position:absolute;
+  left:50%;
+  top:100%;
+  transform:translateX(-50%) translateY(-6px);
+  width:70%;
+  height:18%;
+  background:radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0.05) 70%, transparent 100%);
+  filter:blur(10px);
+  opacity:0.65;
+  pointer-events:none;
+  transition:transform 0.12s ease, opacity 0.12s ease, width 0.12s ease;
+}
+
+/* smaller sizes */
+@media (max-width:900px){
+  .about-img .basketball{max-width:200px}
+  .basketball-wrapper{max-width:200px}
+}
+@media (max-width:480px){
+  .about-img .basketball{max-width:140px}
+  .basketball-wrapper{max-width:140px}
+}
+
 .details{
   margin-top:20px;
   padding-top:20px;
