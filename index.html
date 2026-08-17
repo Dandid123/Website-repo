@@ -80,9 +80,9 @@
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" class="basketball" aria-hidden="true">
               <defs>
                 <radialGradient id="ball-grad" cx="35%" cy="35%" r="70%">
-                  <stop offset="0%" stop-color="#2a6fc9" stop-opacity="0.98"/>
-                  <stop offset="40%" stop-color="#1a4a9e" stop-opacity="0.97"/>
-                  <stop offset="100%" stop-color="#0f2d5a" stop-opacity="0.99"/>
+                  <stop offset="0%" stop-color="#ffb84d" stop-opacity="0.98"/>
+                  <stop offset="40%" stop-color="#ff8c00" stop-opacity="0.97"/>
+                  <stop offset="100%" stop-color="#cc5500" stop-opacity="0.99"/>
                 </radialGradient>
                 <filter id="inner-shadow" x="-50%" y="-50%" width="200%" height="200%">
                   <feOffset dx="0" dy="2"/>
@@ -101,11 +101,11 @@
                 </filter>
               </defs>
 
-              <!-- main ball face with dark blue gradient -->
-              <circle cx="100" cy="100" r="88" fill="url(#ball-grad)" stroke="#0a1a35" stroke-width="3" filter="url(#inner-shadow)" />
+              <!-- main ball face with orange gradient -->
+              <circle cx="100" cy="100" r="88" fill="url(#ball-grad)" stroke="#6b3600" stroke-width="3" filter="url(#inner-shadow)" />
 
               <!-- subtle texture dots -->
-              <g opacity="0.08" fill="#00ffff">
+              <g opacity="0.08" fill="#331a00">
                 <circle cx="72" cy="70" r="1.2" />
                 <circle cx="86" cy="62" r="1.1" />
                 <circle cx="110" cy="72" r="1.4" />
@@ -114,16 +114,16 @@
                 <circle cx="115" cy="96" r="1.0" />
               </g>
 
-              <!-- neon cyan seams: thicker center cross with curved seams -->
-              <path d="M12,100 C50,100 80,40 100,32 C120,24 150,28 188,100" stroke="#00ffff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#neon-glow)" opacity="0.9"/>
-              <path d="M12,100 C50,100 80,160 100,168 C120,176 150,172 188,100" stroke="#00ffff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#neon-glow)" opacity="0.9"/>
+              <!-- seams: thicker center cross with curved seams -->
+              <path d="M12,100 C50,100 80,40 100,32 C120,24 150,28 188,100" stroke="#8b4513" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#neon-glow)" opacity="0.95"/>
+              <path d="M12,100 C50,100 80,160 100,168 C120,176 150,172 188,100" stroke="#8b4513" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#neon-glow)" opacity="0.95"/>
 
-              <!-- classic basketball arcs in neon magenta -->
-              <path d="M40,40 C60,60 140,60 160,40" stroke="#ff006e" stroke-width="5" fill="none" stroke-linecap="round" filter="url(#neon-glow)"/>
-              <path d="M40,160 C60,140 140,140 160,160" stroke="#ff006e" stroke-width="5" fill="none" stroke-linecap="round" filter="url(#neon-glow)"/>
+              <!-- classic basketball arcs -->
+              <path d="M40,40 C60,60 140,60 160,40" stroke="#a34f00" stroke-width="5" fill="none" stroke-linecap="round" filter="url(#neon-glow)"/>
+              <path d="M40,160 C60,140 140,140 160,160" stroke="#a34f00" stroke-width="5" fill="none" stroke-linecap="round" filter="url(#neon-glow)"/>
 
-              <!-- neon cyan highlight for glossy feel -->
-              <path d="M54 48 C72 40 110 36 132 60 C119 45 92 44 68 56 C62 60 56 52 54 48 Z" fill="#00ffff" filter="url(#neon-glow)" opacity="0.22" />
+              <!-- highlight for glossy feel -->
+              <path d="M54 48 C72 40 110 36 132 60 C119 45 92 44 68 56 C62 60 56 52 54 48 Z" fill="rgba(255,255,255,0.16)" filter="url(#neon-glow)" />
 
             </svg>
           </div>

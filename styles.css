@@ -187,7 +187,7 @@ section:hover{
   width:100%;
   height:auto;
   max-width:260px;
-  filter:drop-shadow(0 0 16px rgba(0,255,255,0.4)) drop-shadow(0 0 24px rgba(255,0,110,0.25)) drop-shadow(0 6px 12px rgba(0,0,0,0.6));
+  filter:drop-shadow(0 0 12px rgba(255,140,0,0.35)) drop-shadow(0 6px 18px rgba(0,0,0,0.5));
   animation:cyber-float 3s ease-in-out infinite;
   transform-origin:50% 50%;
   pointer-events:none;
