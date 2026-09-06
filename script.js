@@ -127,8 +127,10 @@ document.addEventListener('keydown', (e) => {
     const dy = y - ballY;
     const distance = Math.hypot(dx, dy);
 
-    // rotation: make the top of the ball point toward the cursor
-    targetRot = Math.atan2(dy, dx) * 180 / Math.PI + 90;
+    // Keep rotation changes on the shortest path when the cursor crosses the left edge.
+    const desiredRot = Math.atan2(dy, dx) * 180 / Math.PI + 90;
+    const angleDelta = ((desiredRot - targetRot + 540) % 360) - 180;
+    targetRot += angleDelta;
 
     // translation: scaled by closeness; clamp distance for stable behaviour
     const clamped = Math.min(distance, 220);
@@ -189,4 +191,3 @@ document.addEventListener('keydown', (e) => {
   });
 
 })();
-
